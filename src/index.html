@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="app.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/scss/app.scss" />
+    <title>HTML File Uploader</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="brand">File Uploader</h1>
+    <div class="grid-container">
+      <header class="header">
+        <h1 class="brand">File Uploader</h1>
+      </header>
       <br />
       <div class="grid">
         <div class="wrapper card">
@@ -35,6 +37,11 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <p>
+        <small>Built by Samakintunde</small>
+      </p>
+    </footer>
     <template class="js-preview-item">
       <div class="preview-item">
         <div class="preview-item__type js-type"></div>
@@ -54,6 +61,6 @@
         </div>
       </div>
     </template>
-    <script src="app.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>

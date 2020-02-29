@@ -1,0 +1,99 @@
+/* GRID */
+.grid-container {
+  margin: 0 auto;
+  max-width: rem-calc(1024);
+  padding-left: rem-calc($grid-gutter);
+  padding-right: rem-calc($grid-gutter);
+}
+
+.grid {
+  --grid-cols: 12;
+
+  display: grid;
+  gap: var(--grid-gap, 0);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+  > * {
+    grid-column-end: span var(--grid-cols);
+  }
+}
+
+/* ALIGNMENT */
+.align-center {
+  align-content: center;
+}
+.align-end {
+  align-content: flex-end;
+}
+
+.align-space-between {
+  align-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.grid-gap-sm {
+  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
+  --grid-gap: var(--space-sm, 0.75rem);
+}
+.grid-gap-md {
+  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
+  --grid-gap: var(--space-md, 1.25rem);
+}
+.grid-gap-lg {
+  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
+  --grid-gap: var(--space-lg, 2rem);
+}
+
+/* COLUMN WIDTHS */
+@for $i from 1 through 13 {
+  .col-#{$i} {
+    grid-column-end: span $i;
+  }
+}
+
+/* AUTO COLUMNS - Do not use with .col classes */
+.grid-auto-xs {
+  --col-min-width: 8rem;
+}
+.grid-auto-sm {
+  --col-min-width: 10rem;
+}
+.grid-auto-md {
+  --col-min-width: 15rem;
+}
+.grid-auto-lg {
+  --col-min-width: 20rem;
+}
+.grid-auto-xl {
+  --col-min-width: 25rem;
+}
+
+.grid-auto-cols {
+  display: grid;
+  grid-gap: var(--grid-gap, 0);
+  grid-template-columns: repeat(auto-fit, minmax(var(--col-min-width, 0), 1fr));
+}
+
+/* COLUMN OFFSETS */
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: $i;
+  }
+  .col-end-#{$i} {
+    grid-column-end: $i;
+  }
+  .col-end {
+    grid-column-end: -1;
+  }
+}
