@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="brand">File Uploader</h1>
+      <br />
+      <div class="grid">
+        <div class="wrapper card">
+          <div class="drop-area js-drop-area">
+            <form action="#" class="drop-area__form js-drop-area__form">
+              <p>
+                Upload multiple files by clicking or dragging a file on here
+              </p>
+              <label>
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  class="js-file-input"
+                  accept="image/png,image/jpeg,image/svg"
+                />
+                <button class="drop-area__button">
+                  Select File
+                </button>
+              </label>
+            </form>
+          </div>
+          <div class="preview js-preview"></div>
+        </div>
+      </div>
+    </div>
+    <template class="js-preview-item">
+      <div class="preview-item">
+        <div class="preview-item__type js-type"></div>
+        <button class="preview-item__delete-btn js-preview-item-delete-btn">
+          &times;
+        </button>
+        <picture class="preview-item__image">
+          <img />
+        </picture>
+        <div class="preview-item__meta">
+          <p>
+            <strong class="js-title"></strong>
+          </p>
+          <p>
+            <small class="js-size"></small>
+          </p>
+        </div>
+      </div>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
