@@ -9,31 +9,36 @@
   <body>
     <div class="grid-container">
       <header class="header">
-        <h1 class="brand">File Uploader</h1>
+        <h1 class="h1 header__title">File Uploader</h1>
       </header>
-      <br />
-      <div class="grid">
-        <div class="wrapper card">
-          <div class="drop-area js-drop-area">
-            <form action="#" class="drop-area__form js-drop-area__form">
-              <p>
-                Upload multiple files by clicking or dragging a file on here
-              </p>
-              <label>
-                <input
-                  type="file"
-                  id="file"
-                  name="file"
-                  class="js-file-input"
-                  accept="image/png,image/jpeg,image/svg"
-                />
-                <button class="drop-area__button">
-                  Select File
-                </button>
-              </label>
-            </form>
+      <div class="flex-grid justify-center">
+        <div class="md:cell-9 lg:cell-6">
+          <div class="card">
+            <div class="drop-area js-drop-area padding-md">
+              <form action="#" class="drop-area__form js-drop-area__form">
+                <p>
+                  Upload multiple files by clicking or dragging a file on here
+                </p>
+                <label>
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    class="js-file-input"
+                    accept="image/png,image/jpeg,image/svg"
+                  />
+                  <div class="padding-top-md">
+                    <button class="primary-button drop-area__button">
+                      Select File
+                    </button>
+                  </div>
+                </label>
+              </form>
+            </div>
           </div>
-          <div class="preview js-preview"></div>
+          <div
+            class="preview-area js-preview grid grid-auto-cols grid-gap-md"
+          ></div>
         </div>
       </div>
     </div>

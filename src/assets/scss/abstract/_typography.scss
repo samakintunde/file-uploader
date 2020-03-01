@@ -1,0 +1,28 @@
+$body-font-size: 16;
+
+$headings-font-size: (
+  "h1": (
+    small: 36,
+    large: 48
+  ),
+  "h2": (
+    small: 32,
+    large: 40
+  ),
+  "h3": (
+    small: 28,
+    large: 36
+  ),
+  "h4": (
+    small: 24,
+    large: 32
+  ),
+  "h5": (
+    small: 20,
+    large: 24
+  ),
+  "h6": (
+    small: 18,
+    large: 20
+  )
+);
