@@ -1,6 +1,7 @@
 .flex-grid {
   --flex-grid-cols: 12;
 
+  width: 100%;
   display: flex;
 
   > * {
