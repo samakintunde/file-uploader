@@ -1,23 +1,9 @@
-// VARIABLES
-$body-font-size: 16;
-$gutter: 24;
-$color-primary-dark: #0a47b7;
-$color-primary: #147dff;
-$color-primary-light: #72bdff;
-$color-danger: #f41f1f;
-$color-black: #000000;
-$color-gray-dark: #2e476e;
-$color-gray: #8fa3bf;
-$color-gray-light: #f5f7fa;
-$color-white: #ffffff;
-
-// FUNCTIONS
-@function rem-calc($value) {
-  @return #{$value/$body-font-size}rem;
-}
+@import "./base";
+@import "./layout";
+@import "./components";
 
 body {
-  font-family: sans-serif;
+  font-family: "Barlow", sans-serif;
   background-color: $color-gray-light;
 }
 
@@ -25,38 +11,10 @@ body {
   color: $color-primary;
 }
 
-.container {
-  max-width: rem-calc(1024);
-  margin: 0 auto;
-  padding-left: rem-calc($gutter);
-  padding-right: rem-calc($gutter);
-  text-align: center;
-}
-
 .card {
   box-shadow: 0 rem-calc(12) rem-calc(36) rgba($color: $color-gray, $alpha: 0.5);
   padding: rem-calc(36);
   border-radius: rem-calc(4);
-}
-
-.grid {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(12, 1fr);
-  // width: 100%;
-}
-
-.align-center {
-  align-content: center;
-}
-
-justify-center {
-  justify-content: center;
-}
-
-.wrapper {
-  // width: 100%;
-  grid-column: 3 / 11;
 }
 
 .drop-area {
@@ -104,8 +62,8 @@ justify-center {
 .preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: rem-calc($gutter);
-  row-gap: rem-calc($gutter);
+  column-gap: rem-calc($grid-gutter);
+  row-gap: rem-calc($grid-gutter);
   // margin-top: rem-calc(64);
 
   > img {
