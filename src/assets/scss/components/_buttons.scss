@@ -1,0 +1,19 @@
+%button {
+  border: none;
+  border-radius: rem-calc(4);
+  cursor: pointer;
+  outline: none;
+  padding: rem-calc(12) rem-calc(36);
+  // text-transform: uppercase;
+  transition: 0.3s ease-out;
+}
+
+.primary-button {
+  @extend %button;
+  background-color: color(primary);
+  color: color(white);
+
+  &:hover {
+    background-color: color(primary-dark);
+  }
+}

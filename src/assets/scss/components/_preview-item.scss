@@ -1,0 +1,56 @@
+.preview-item {
+  position: relative;
+  box-shadow: rem-calc(0) rem-calc(16) rem-calc(28)
+    rgba($color: color(black), $alpha: 0.15);
+
+  &__delete-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem-calc(28);
+    height: rem-calc(28);
+    padding: rem-calc(4) rem-calc(8);
+    transform: translate(50%, -50%);
+    border: none;
+    border-radius: rem-calc(500);
+    box-shadow: rem-calc(2) rem-calc(4) rem-calc(28)
+      rgba($color: color(black), $alpha: 0.15);
+    transition: 0.3s ease-in-out;
+    font-size: rem-calc(20);
+    line-height: 0;
+
+    &:hover {
+      color: color(danger);
+    }
+  }
+
+  &__type {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: rem-calc(4);
+    background-color: rgba(color(primary), 0.75);
+    color: color(white);
+    text-transform: uppercase;
+    font-size: rem-calc(14);
+    padding: rem-calc(4) rem-calc(8);
+  }
+
+  &__image {
+    img {
+      border-radius: rem-calc(4);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__meta {
+    padding: rem-calc(16);
+
+    p {
+      margin: 0;
+    }
+  }
+}

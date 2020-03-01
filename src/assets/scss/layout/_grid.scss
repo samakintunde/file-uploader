@@ -1,9 +1,10 @@
 /* GRID */
+// You shouldn't nest elements with this class
 .grid-container {
   margin: 0 auto;
   max-width: rem-calc(1024);
-  padding-left: rem-calc($grid-gutter);
-  padding-right: rem-calc($grid-gutter);
+  margin-left: rem-calc($grid-gutter);
+  margin-right: rem-calc($grid-gutter);
 }
 
 .grid {
@@ -43,15 +44,12 @@
 }
 
 .grid-gap-sm {
-  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
   --grid-gap: var(--space-sm, 0.75rem);
 }
 .grid-gap-md {
-  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
   --grid-gap: var(--space-md, 1.25rem);
 }
 .grid-gap-lg {
-  /* --grid-gap: ${props => props.theme.grid.gutter.md}; */
   --grid-gap: var(--space-lg, 2rem);
 }
 

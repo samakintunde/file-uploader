@@ -1,0 +1,18 @@
+$colors: (
+  primary-dark: #0a47b7,
+  primary: #147dff,
+  primary-light: #72bdff,
+  danger: #ff3a44,
+  success: #44bc34,
+  info: #42d6ff,
+  warning: #fcde46,
+  black: #000000,
+  gray-dark: #2e476e,
+  gray: #8fa3bf,
+  gray-light: #f5f7fa,
+  white: #ffffff
+);
+
+@function color($color) {
+  @return map-get($map: $colors, $key: $color);
+}

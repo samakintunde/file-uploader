@@ -1,0 +1,48 @@
+.flex-grid {
+  --flex-grid-cols: 12;
+
+  display: flex;
+
+  > * {
+    width: 100%;
+  }
+}
+
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @for $i from 1 through 12 {
+    .#{$breakpoint}\:cell-#{$i} {
+      @include breakpoint($breakpoint) {
+        width: $i/12 * 100%;
+      }
+    }
+    .#{$breakpoint}\:offset-cell-#{$i} {
+      @include breakpoint($breakpoint) {
+        margin-left: $i/12 * 100%;
+      }
+    }
+  }
+}
+
+/* ALIGNMENT */
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+
+.align-space-between {
+  align-items: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
