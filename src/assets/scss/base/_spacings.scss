@@ -54,31 +54,3 @@ $spacings: (
     margin-bottom: rem-calc($spacing-value);
   }
 }
-
-// @mixin padding($val1, $val2: null, $val3: null, $val4: null) {
-//   @if $val1 != null & $val2 == null {
-//     padding: $val1;
-//   }
-
-//   @if $val2 != null & $val3 == null {
-//     padding: $val1 $val2;
-//   }
-
-//   @if $val4 != null {
-//     padding: $val1 $val2 $val3 $val4;
-//   }
-// }
-
-// @mixin margin($val1, $val2: null, $val3: null, $val4: null) {
-//   @if $val1 != null & $val2 == null {
-//     margin: $val1;
-//   }
-
-//   @if $val2 != null & $val3 == null {
-//     margin: $val1 $val2;
-//   }
-
-//   @if $val4 != null {
-//     margin: $val1 $val2 $val3 $val4;
-//   }
-// }

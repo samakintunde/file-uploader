@@ -13,6 +13,7 @@
 /* COMPONENTS */
 @import "./components/buttons";
 @import "./components/cards";
+@import "./components/alert";
 @import "./components/preview-item";
 
 /* LAYOUT */
@@ -30,7 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: rem-calc(4) dashed color(gray);
+  border: rem-calc(2) dashed color(gray);
   border-radius: rem-calc(2);
   background-color: color(gray-light);
   min-height: rem-calc(360);

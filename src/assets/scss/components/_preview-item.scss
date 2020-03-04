@@ -2,6 +2,7 @@
   position: relative;
   box-shadow: rem-calc(0) rem-calc(16) rem-calc(28)
     rgba($color: color(black), $alpha: 0.15);
+  background-color: color(white);
 
   &__delete-btn {
     cursor: pointer;
@@ -19,6 +20,7 @@
     transition: 0.3s ease-in-out;
     font-size: rem-calc(20);
     line-height: 0;
+    outline: none;
 
     &:hover {
       color: color(danger);

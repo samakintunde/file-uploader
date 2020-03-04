@@ -1,5 +1,5 @@
 import { renderFilePreview } from "./_file-preview";
-import { filesState } from "./_files";
+// import { filesService } from "./_files";
 
 function handleFiles(files: FileList) {
   const fileInput = document.querySelector(".js-file-input");
@@ -9,7 +9,6 @@ function handleFiles(files: FileList) {
   // convert files FileList to Array
   [...files].forEach(file => {
     if (!acceptableFileTypes.includes(file.type)) return;
-    filesState.addFile(file);
     renderFilePreview(file);
   });
 }

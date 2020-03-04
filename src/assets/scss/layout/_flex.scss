@@ -9,15 +9,15 @@
   }
 }
 
-@each $breakpoint, $breakpoint-value in $breakpoints {
+@each $breakpoint, $breakpoint-value in (sm: small, md: medium, lg: large) {
   @for $i from 1 through 12 {
     .#{$breakpoint}\:cell-#{$i} {
-      @include breakpoint($breakpoint) {
+      @include breakpoint($breakpoint-value) {
         width: $i/12 * 100%;
       }
     }
     .#{$breakpoint}\:offset-cell-#{$i} {
-      @include breakpoint($breakpoint) {
+      @include breakpoint($breakpoint-value) {
         margin-left: $i/12 * 100%;
       }
     }

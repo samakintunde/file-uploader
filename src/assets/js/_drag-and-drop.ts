@@ -1,7 +1,7 @@
 import { addHighlight, removeHighlight } from "./utils/_highlight";
 import { handleFiles } from "./_file-handler";
 
-function dragHandler(event: DragEvent, cb: Function) {
+function dragHandler(event, cb: Function) {
   // Stops the browser from opening the file in the tab
   event.preventDefault();
   // Stops the event from bubbling higher than necessary
