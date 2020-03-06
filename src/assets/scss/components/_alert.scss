@@ -4,7 +4,7 @@
   right: 0;
   background-color: color(white);
   border-radius: rem-calc(4);
-  padding: rem-calc(8);
+  padding: rem-calc(12) rem-calc(24);
   z-index: 2;
   box-shadow: rem-calc(4) rem-calc(4) rem-calc(24)
     rgba($color: color(black), $alpha: 0.25);
@@ -13,5 +13,9 @@
 
   @include breakpoint(large) {
     padding: rem-calc(24);
+  }
+
+  &.visible {
+    transform: translateY(0);
   }
 }

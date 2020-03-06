@@ -1,8 +1,8 @@
 import { formatFileDetails } from "./utils/_file";
-// import { filesService } from "./_files";
+import { files } from "./_files";
 
 function createFilePreview(file) {
-  const filePreviewTemplate = document.querySelector(
+  const filePreviewTemplate: HTMLTemplateElement = document.querySelector(
     "template.js-preview-item"
   );
 
@@ -37,13 +37,19 @@ function renderFilePreview(file: File) {
       type: file.type,
       imageSrc: fileReader.result
     });
+    // Update State
+    files.addFile(file);
+    // Update UI
     document.querySelector(".js-preview").appendChild(filePreview);
 
     [...document.querySelectorAll(".js-preview-item-delete-btn")].forEach(
-      deleteBtn => {
+      (deleteBtn, index) => {
         deleteBtn.onclick = function(e) {
           const id = e.target.parentElement.dataset.id;
+          // Update State
           deleteFilePreview(id);
+          // Update UI
+          files.removeFile(file, index);
         };
       }
     );

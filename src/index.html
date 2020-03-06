@@ -11,7 +11,7 @@
       <header class="header">
         <h1 class="h1 header__title">File Uploader</h1>
       </header>
-      <div class="flex-grid justify-center">
+      <div class="flex justify-center">
         <div class="md:cell-10 lg:cell-8">
           <div class="card margin-bottom-md">
             <div class="drop-area js-drop-area padding-md">
@@ -21,7 +21,7 @@
                 </p>
                 <p>
                   <small>
-                    (Supports only PNG and JPEG images)
+                    (Supports only PNG, JPG and SVG images)
                   </small>
                 </p>
                 <div class="padding-top-md">
@@ -42,6 +42,16 @@
               </form>
             </div>
           </div>
+          <div class="flex justify-space-between align-center">
+            <h1>Files <span class="js-files-count">(13)</span></h1>
+            <!-- <span> -->
+            <form>
+              <button type="submit" class="primary-button js-upload-button">
+                Upload
+              </button>
+            </form>
+            <!-- </span> -->
+          </div>
           <div
             class="preview-area js-preview grid grid-auto-cols grid-gap-md"
           ></div>
@@ -55,9 +65,11 @@
       </footer>
     </div>
 
-    <div class="alert margin-sm">Upload an image instead!</div>
-
     <!-- TEMPLATES -->
+    <template class="js-alert">
+      <div class="alert margin-sm">Upload an image instead!</div>
+    </template>
+
     <template class="js-preview-item">
       <div class="preview-item">
         <div class="preview-item__type js-type"></div>

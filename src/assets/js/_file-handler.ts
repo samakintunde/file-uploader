@@ -1,5 +1,5 @@
 import { renderFilePreview } from "./_file-preview";
-// import { filesService } from "./_files";
+import { renderAlert } from "./_alert";
 
 function handleFiles(files: FileList) {
   const fileInput = document.querySelector(".js-file-input");
@@ -8,7 +8,9 @@ function handleFiles(files: FileList) {
 
   // convert files FileList to Array
   [...files].forEach(file => {
-    if (!acceptableFileTypes.includes(file.type)) return;
+    if (!acceptableFileTypes.includes(file.type)) {
+      return renderAlert(`${file.type} is not an acceptable type`);
+    }
     renderFilePreview(file);
   });
 }

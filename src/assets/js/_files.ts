@@ -1,5 +1,3 @@
-import { renderFilePreview } from "./_file-preview";
-
 // Initial Approach was to build a custom PUB/SUB for reactivity
 // Discovered I'd have to write some reconciliation algorithm to handle
 // rendering massive lists of files on each update
@@ -93,5 +91,28 @@ import { renderFilePreview } from "./_file-preview";
 //     deleteFile
 //   };
 // }
+
+function Files() {
+  let files: File[] = [];
+
+  const addFile = (file: File) => {
+    files.push(file);
+  };
+
+  const removeFile = (fileRemoved: File, index: number = null) => {
+    if (index) {
+      return files.splice(index, 1);
+    }
+    files = files.filter(file => file.name !== fileRemoved.name);
+  };
+
+  return {
+    files,
+    addFile,
+    removeFile
+  };
+}
+
+export const files = Files();
 
 // export const filesService = Files();
