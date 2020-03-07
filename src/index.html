@@ -11,15 +11,20 @@
       <header class="header">
         <h1 class="h1 header__title">File Uploader</h1>
       </header>
-      <div class="flex-grid justify-center">
-        <div class="md:cell-9 lg:cell-6">
-          <div class="card">
+      <div class="flex justify-center">
+        <div class="md:cell-10 lg:cell-8">
+          <div class="card margin-bottom-md">
             <div class="drop-area js-drop-area padding-md">
-              <form action="#" class="drop-area__form js-drop-area__form">
+              <form action="#" class="drop-area__form js-drop-area-form">
                 <p>
                   Upload multiple files by clicking or dragging a file on here
                 </p>
-                <label>
+                <p>
+                  <small>
+                    (Supports only PNG, JPG and SVG images)
+                  </small>
+                </p>
+                <div class="padding-top-md">
                   <input
                     type="file"
                     id="file"
@@ -27,26 +32,44 @@
                     class="js-file-input"
                     accept="image/png,image/jpeg,image/svg"
                   />
-                  <div class="padding-top-md">
-                    <button class="primary-button drop-area__button">
-                      Select File
-                    </button>
-                  </div>
-                </label>
+                  <label
+                    for="file"
+                    class="primary-button drop-area__button margin-top-md small"
+                  >
+                    Select File
+                  </label>
+                </div>
               </form>
             </div>
+          </div>
+          <div class="flex justify-space-between align-center">
+            <h1>Files <span class="js-files-count">(13)</span></h1>
+            <!-- <span> -->
+            <form>
+              <button type="submit" class="primary-button js-upload-button">
+                Upload
+              </button>
+            </form>
+            <!-- </span> -->
           </div>
           <div
             class="preview-area js-preview grid grid-auto-cols grid-gap-md"
           ></div>
         </div>
       </div>
+      <div class="modal js-modal"></div>
+      <footer class="footer">
+        <p>
+          <small>Built by Samakintunde</small>
+        </p>
+      </footer>
     </div>
-    <footer class="footer">
-      <p>
-        <small>Built by Samakintunde</small>
-      </p>
-    </footer>
+
+    <!-- TEMPLATES -->
+    <template class="js-alert">
+      <div class="alert margin-sm">Upload an image instead!</div>
+    </template>
+
     <template class="js-preview-item">
       <div class="preview-item">
         <div class="preview-item__type js-type"></div>
@@ -65,6 +88,9 @@
           </p>
         </div>
       </div>
+    </template>
+    <template class="js-alert">
+      <div class="alert"></div>
     </template>
     <script src="./assets/js/app.ts"></script>
   </body>

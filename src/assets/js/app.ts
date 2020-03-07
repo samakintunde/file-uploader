@@ -6,13 +6,11 @@ import {
   handleDrop
 } from "./_drag-and-drop";
 import { handleFiles } from "./_file-handler";
-import { filesState } from "./_files";
 
 const dropArea = document.querySelector(".js-drop-area");
 const fileInput = document.querySelector(".js-file-input");
-const fileDeleteBtnList = [
-  ...document.querySelectorAll(".js-preview-item-delete-btn")
-];
+const dropAreaForm = document.querySelector(".js-drop-area-form");
+const deletePreviewBtn = document.querySelector(".js-preview-item-delete-btn");
 
 /**
  * The dragged item is dragged over dropArea,
@@ -20,7 +18,7 @@ const fileDeleteBtnList = [
  */
 dropArea.addEventListener(
   "dragenter",
-  (event: DragEvent) => dragHandler(event, handleDragEnter),
+  event => dragHandler(event, handleDragEnter),
   false
 );
 
@@ -57,8 +55,4 @@ dropArea.addEventListener(
 fileInput.addEventListener("change", e => {
   const files = e.target.files;
   handleFiles(files);
-});
-
-fileDeleteBtnList.forEach((fileDeleteBtn, index) => {
-  fileDeleteBtn.addEventListener("click", e => filesState.deleteFile(index));
 });

@@ -18,3 +18,11 @@ body {
     }
   }
 }
+
+.large {
+  font-size: rem-calc($large-font-size);
+}
+
+.small {
+  font-size: rem-calc($small-font-size);
+}
