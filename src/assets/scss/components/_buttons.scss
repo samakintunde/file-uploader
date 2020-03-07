@@ -5,6 +5,12 @@
   outline: none;
   padding: rem-calc(12) rem-calc(36);
   transition: 0.3s ease-out;
+
+  &:disabled {
+    pointer-events: none;
+    color: color(gray-dark);
+    background-color: color(gray);
+  }
 }
 
 .primary-button {

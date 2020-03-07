@@ -1,0 +1,14 @@
+// BASE
+.transition {
+  transition: 0.3s ease-in-out;
+}
+
+// TRANSITIONS
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+}

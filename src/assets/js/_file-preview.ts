@@ -1,5 +1,5 @@
 import { formatFileDetails } from "./utils/_file";
-import { files } from "./_files";
+import { fileStore } from "./_files";
 
 function createFilePreview(file) {
   const filePreviewTemplate: HTMLTemplateElement = document.querySelector(
@@ -12,9 +12,7 @@ function createFilePreview(file) {
   const fileDetails = formatFileDetails(file);
 
   filePreviewImage.src = file.imageSrc;
-  filePreview.children[0].dataset[
-    "id"
-  ] = `${fileDetails.name}-${fileDetails.size}`;
+  filePreview.children[0].dataset["id"] = file.name;
   filePreview.querySelector(".js-title").textContent = fileDetails.name;
   filePreview.querySelector(".js-size").textContent = fileDetails.size;
   filePreview.querySelector(".js-type").textContent = fileDetails.type;
@@ -25,6 +23,10 @@ function createFilePreview(file) {
 function deleteFilePreview(id) {
   const elem: HTMLElement = document.querySelector(`[data-id='${id}']`);
   elem.remove();
+}
+
+function updateFilesCount(files) {
+  document.querySelector(".js-files-count").textContent = `${files.length}`;
 }
 
 function renderFilePreview(file: File) {
@@ -38,18 +40,38 @@ function renderFilePreview(file: File) {
       imageSrc: fileReader.result
     });
     // Update State
-    files.addFile(file);
+    fileStore.addFile(file);
     // Update UI
     document.querySelector(".js-preview").appendChild(filePreview);
+    updateFilesCount(fileStore.getFiles());
+
+    if (fileStore.getFiles().length >= 1) {
+      document.querySelector<HTMLButtonElement>(
+        ".js-upload-btn"
+      ).disabled = false;
+      document
+        .querySelector(".js-preview-area-header")
+        .classList.add("visible");
+    }
 
     [...document.querySelectorAll(".js-preview-item-delete-btn")].forEach(
-      (deleteBtn, index) => {
+      (deleteBtn: HTMLButtonElement) => {
         deleteBtn.onclick = function(e) {
-          const id = e.target.parentElement.dataset.id;
+          const id: string = this.parentElement.dataset.id;
           // Update State
-          deleteFilePreview(id);
+          fileStore.removeFile(id);
           // Update UI
-          files.removeFile(file, index);
+          deleteFilePreview(id);
+          updateFilesCount(fileStore.getFiles());
+
+          if (fileStore.getFiles().length <= 0) {
+            document.querySelector<HTMLButtonElement>(
+              ".js-upload-btn"
+            ).disabled = true;
+            document
+              .querySelector(".js-preview-area-header")
+              .classList.remove("visible");
+          }
         };
       }
     );

@@ -8,7 +8,9 @@ function renderAlert(message: string) {
     ".js-alert"
   );
   const alertNode: Node = alertTemplate.content.cloneNode(true);
-  alertNode.querySelector(".alert").textContent = message;
+  alertNode.querySelector(
+    ".alert"
+  ).innerHTML = `<span class="color-danger margin-right-sm" style="color:#ff3a44">!</span>${message}`;
   document.body.appendChild(alertNode);
 
   const alertEl = document.querySelector(".alert");

@@ -1,12 +1,15 @@
-.flex-grid {
+.flex {
   --flex-grid-cols: 12;
 
   width: 100%;
   display: flex;
 
-  > * {
+  .cell {
     width: 100%;
   }
+  // > * {
+  //   width: 100%;
+  // }
 }
 
 @each $breakpoint, $breakpoint-value in (sm: small, md: medium, lg: large) {
