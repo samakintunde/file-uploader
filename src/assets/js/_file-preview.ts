@@ -1,5 +1,5 @@
 import { formatFileDetails } from "./utils/_file";
-import { fileStore } from "./_files";
+import { fileStore } from "./_file-store";
 
 function createFilePreview(file) {
   const filePreviewTemplate: HTMLTemplateElement = document.querySelector(

@@ -4,6 +4,7 @@ enum AlertType {
 }
 
 function renderAlert(message: string) {
+  // TODO: Allow element to be stack-able
   const alertTemplate: HTMLTemplateElement = document.querySelector(
     ".js-alert"
   );

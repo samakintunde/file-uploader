@@ -1,5 +1,11 @@
 import { renderFilePreview } from "./_file-preview";
 import { renderAlert } from "./_alert";
+import { fileStore } from "./_file-store";
+
+const fileExists = (file, store) => {
+  const storedFiles = store.getFiles();
+  return storedFiles.some(storedFile => storedFile.name === file.name);
+};
 
 function handleFiles(files: FileList) {
   const fileInput = document.querySelector(".js-file-input");
@@ -10,6 +16,10 @@ function handleFiles(files: FileList) {
   [...files].forEach(file => {
     if (!acceptableFileTypes.includes(file.type)) {
       return renderAlert(`${file.type} is not an acceptable type`);
+    }
+
+    if (fileExists(file, fileStore)) {
+      return renderAlert(`${file.name} cannot be added twice.`);
     }
     renderFilePreview(file);
   });
