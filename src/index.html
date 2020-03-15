@@ -19,10 +19,10 @@
                 <p>
                   Upload multiple files by clicking or dragging a file on here
                 </p>
-                <p>
-                  <small>
+                <p class="w100 small">
+                  <em>
                     (Supports only PNG, JPG and SVG images)
-                  </small>
+                  </em>
                 </p>
                 <div class="padding-top-md">
                   <input
@@ -42,22 +42,21 @@
               </form>
             </div>
           </div>
-          <div class="flex justify-space-between align-center">
-            <h1>Files <span class="js-files-count">(13)</span></h1>
-            <!-- <span> -->
-            <form>
-              <button type="submit" class="primary-button js-upload-button">
-                Upload
-              </button>
-            </form>
-            <!-- </span> -->
+          <div
+            class="preview-area-header js-preview-area-header flex justify-space-between align-center margin-bottom-md transition hidden"
+          >
+            <h2>Files (<span class="js-files-count">0</span>)</h2>
+
+            <button type="submit" class="primary-button js-upload-btn" disabled>
+              Upload
+            </button>
           </div>
           <div
             class="preview-area js-preview grid grid-auto-cols grid-gap-md"
           ></div>
         </div>
       </div>
-      <div class="modal js-modal"></div>
+      <div class="modal js-modal hidden"></div>
       <footer class="footer">
         <p>
           <small>Built by Samakintunde</small>
@@ -66,10 +65,6 @@
     </div>
 
     <!-- TEMPLATES -->
-    <template class="js-alert">
-      <div class="alert margin-sm">Upload an image instead!</div>
-    </template>
-
     <template class="js-preview-item">
       <div class="preview-item">
         <div class="preview-item__type js-type"></div>
@@ -90,7 +85,7 @@
       </div>
     </template>
     <template class="js-alert">
-      <div class="alert"></div>
+      <div class="alert margin-sm"></div>
     </template>
     <script src="./assets/js/app.ts"></script>
   </body>

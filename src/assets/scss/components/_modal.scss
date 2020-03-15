@@ -1,0 +1,43 @@
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(color(gray), 0.5);
+
+  &__card {
+    @extend .sm\:cell-12, .md\:cell-8, .lg\:cell-6;
+    position: relative;
+    padding: rem-calc(48);
+    background-color: color(white);
+    box-shadow: rem-calc(4) rem-calc(4) rem-calc(24)
+      rgba($color: color(black), $alpha: 0.25);
+  }
+
+  &__close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem-calc(28);
+    height: rem-calc(28);
+    padding: rem-calc(4) rem-calc(8);
+    transform: translate(-50%, 50%);
+    border: none;
+    border-radius: rem-calc(500);
+    transition: 0.3s ease-in-out;
+    font-size: rem-calc(20);
+    line-height: 0;
+    outline: none;
+    z-index: 1;
+
+    &:hover {
+      color: color(danger);
+      background-color: color(gray-light);
+    }
+  }
+}

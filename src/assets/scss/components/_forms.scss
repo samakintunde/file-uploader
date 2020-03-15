@@ -1,0 +1,27 @@
+.form {
+  > .form-group + .form-group {
+    margin-bottom: rem-calc(16);
+  }
+
+  input {
+    padding: rem-calc(8) rem-calc(12);
+    border: rem-calc(1) solid #{darken($color: color(gray-light), $amount: 5)};
+    background-color: color(gray-light);
+    border-radius: rem-calc(2);
+    width: 100%;
+    outline: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #{darken($color: color(gray-light), $amount: 1.5)};
+    }
+
+    &:focus {
+      border-color: color(gray);
+    }
+  }
+
+  .label {
+    margin-bottom: rem-calc(4);
+  }
+}

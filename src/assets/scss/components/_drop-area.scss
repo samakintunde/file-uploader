@@ -1,0 +1,23 @@
+.drop-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: rem-calc(2) dashed color(gray);
+  border-radius: rem-calc(2);
+  background-color: color(gray-light);
+  min-height: rem-calc(360);
+  transition: 0.3s ease-in-out;
+
+  // &:hover,
+  &.highlight {
+    border-color: color(primary);
+    background-color: rgba(color(primary), 0.05);
+  }
+
+  &__form {
+    input[type="file"] {
+      display: none;
+    }
+  }
+}

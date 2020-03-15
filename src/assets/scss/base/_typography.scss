@@ -26,3 +26,10 @@ body {
 .small {
   font-size: rem-calc($small-font-size);
 }
+
+// FONT WEIGHTS
+@each $weight in (100, 200, 300, 400, 500, 600, 700) {
+  .w#{$weight} {
+    font-weight: $weight;
+  }
+}
